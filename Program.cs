@@ -2,25 +2,28 @@
 
 class Program
 {
-static void Main(string[] args)
-{
-
-int[] numbers = new int[10] { 10, 21, 14, 93, 23, 5, 30, 88, 10, 50 };
-
-
-
-    int count = 0; 
-
-    Console.Write("Массив [");
-   
-    foreach (int num in numbers)
+    static void Main(string[] args)
     {
-        Console.Write(num + " ");
-        if (num >= 20 && num <= 90) 
+        // Создаем массив на 10 целых чисел
+        int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        int evenCount = 0; // переменная для хранения количества четных чисел
+        Console.Write("Массив ["); 
+        // Проходим по каждому элементу массива
+        foreach (int number in numbers)
         {
-            count++;
+             Console.Write(number + " ");
+            // Проверяем, является ли число четным
+            if (number % 2 == 0)
+            {
+                evenCount++; // увеличиваем счетчик на 1
+            }
         }
+
+        // Выводим результат
+        Console.Write("] => " + evenCount); 
+
+        // Задержка консоли
+        Console.ReadLine();
     }
-    Console.Write("] => " + count); 
-}
 }
